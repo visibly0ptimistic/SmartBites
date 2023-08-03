@@ -7,23 +7,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Bites</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <h1>Smart Bites</h1>
-        <p>Make healthier food choices with Yum! Brands.</p>
+    <header class="bg-danger text-white p-4">
+        <h1 class="mb-0">Smart Bites</h1>
+        <p class="mb-0">Make healthier food choices with Yum! Brands.</p>
     </header>
 
-    <main>
-        <form id="food-form">
+    <main class="container py-4">
+        <form id="food-form" class="mb-4">
             <label for="food-input">Enter a food item:</label>
-            <input type="text" id="food-input" name="food" required>
-            <button type="submit">Get Nutrition Data</button>
+            <input type="text" id="food-input" name="food" required class="form-control">
+            <button type="submit" class="btn btn-danger mt-2">Get Nutrition Data</button>
         </form>
 
-        <div id="nutrition-data"></div>
+        <div id="nutrition-data" class="row"></div>
     </main>
 
     <script src="main.js"></script>
