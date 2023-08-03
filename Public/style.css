@@ -59,6 +59,39 @@ button:hover {
 }
 
 #nutrition-data {
-    white-space: pre-wrap;
-    font-family: monospace;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+#nutrition-data h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#nutrition-data ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nutrition-data li {
+    margin-bottom: 8px;
+}
+
+#nutrition-data li strong {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+}
+
+#nutrition-data li span {
+    font-weight: normal;
+    color: #555;
+}
+
+#nutrition-data p {
+    margin: 0;
 }

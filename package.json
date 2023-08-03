@@ -8,19 +8,19 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/yourusername/smart-bites.git"
+        "url": "git+https://github.com/visibly0ptimistic/SmartBites.git"
     },
     "keywords": [
         "nutrition",
         "Yum! Brands",
         "food"
     ],
-    "author": "Your Name",
+    "author": "Victor Ejiasi",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/yourusername/smart-bites/issues"
+        "url": "https://github.com/visibly0ptimistic/SmartBites/issues"
     },
-    "homepage": "https://github.com/yourusername/smart-bites#readme",
+    "homepage": "https://github.com/visibly0ptimistic/SmartBites#readme",
     "dependencies": {
         "netlify-cli": "^3.39.0",
         "axios": "^0.21.1"
