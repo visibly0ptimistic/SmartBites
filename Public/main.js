@@ -1,26 +1,36 @@
 // main.js
 
-document.getElementById('food-form').addEventListener('submit', function(event) {
+document.getElementById('food-form').addEventListener('submit', (event) => {
     // Prevent the form from submitting normally
     event.preventDefault();
 
     // Get the food item from the form
     const foodItem = document.getElementById('food-input').value;
 
-    // Call the serverless function to get nutritional data
+    // Fetch the nutrition data for the food item
     fetch('/.netlify/functions/getNutritionData?food=' + encodeURIComponent(foodItem))
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error('Failed to fetch nutritional data');
-            }
-            return response.json();
+        .then(response => response.json())
+        .then(recipes => {
+            // Get the nutrition data div
+            const nutritionDataDiv = document.getElementById('nutrition-data');
+
+            // Clear any existing data
+            nutritionDataDiv.innerHTML = '';
+
+            // Add each recipe to the div
+            recipes.forEach(recipe => {
+                nutritionDataDiv.innerHTML += `
+                    <h2>${recipe.recipe.label}</h2>
+                    <p>${recipe.recipe.calories} calories</p>
+                    <p>${recipe.recipe.dietLabels.join(', ')}</p>
+                    <p>${recipe.recipe.healthLabels.join(', ')}</p>
+                    <p>${recipe.recipe.cautions.join(', ')}</p>
+                    <img src="${recipe.recipe.image}" alt="${recipe.recipe.label}">
+                `;
+            });
         })
-        .then(function(data) {
-            // Display the nutritional data
-            document.getElementById('nutrition-data').textContent = JSON.stringify(data, null, 2);
-        })
-        .catch(function(error) {
-            // Display an error message
-            document.getElementById('nutrition-data').textContent = 'Error: ' + error.message;
+        .catch(error => {
+            console.error('Error:', error);
         });
 });
+
